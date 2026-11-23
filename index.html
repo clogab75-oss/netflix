@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👀 Un petit cadeau...</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    padding: 25px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #ff1744;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff4569;
+}
+
+#rickroll {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+#rickroll h1 {
+    color: #ff1744;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="welcome">
+    <h1>🎁 Un petit cadeau !</h1>
+    <p>J'ai quelque chose de spécial à te montrer...</p>
+    <button onclick="rickroll()">Clique ici 👀</button>
+</div>
+
+<div id="rickroll">
+    <h1>😂 NEVER GONNA GIVE YOU UP!</h1>
+    <iframe
+        id="video"
+        src=""
+        allow="autoplay; encrypted-media; fullscreen"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+function rickroll() {
+    document.getElementById("welcome").style.display = "none";
+
+    const screen = document.getElementById("rickroll");
+    screen.style.display = "flex";
+
+    document.getElementById("video").src =
+        "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+}
+</script>
+
+</body>
+</html>
